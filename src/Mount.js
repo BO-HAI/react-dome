@@ -11,10 +11,9 @@
 var CommentBox = React.createClass({
 
     getInitialState: function () {
-        alert('initialState');
+        console.log('state：1');
         return {
-            opacity: 1,
-            fontSize: '52px'
+            'fontSize': '100px'
         }
     },
     render: function() {
@@ -24,19 +23,19 @@ var CommentBox = React.createClass({
             </div>
         );
     },
-    componentWillMount: function () {
-        alert('will Mount');
-    },
-    componentDidMount: function () {
-        alert('did Mount');
 
-        //var _self = this;
+    componentWillMount: function () {
+        console.log('will Mount: 2');
+    },
+
+    componentDidMount: function () {
+        console.log('did Mount: 3');
 
         window.setTimeout(function () {
             this.setState({
-                opacity: 0.5,
-                fontSize: '100px'
+                'fontSize': '200px'
             });
+
         }.bind(this), 2000);
     }
 });
